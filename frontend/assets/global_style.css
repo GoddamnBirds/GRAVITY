@@ -1,0 +1,70 @@
+body {
+    background-color: #080808;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 90%;
+    
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(13, 80px);
+    grid-auto-rows: 50px;
+    gap: 10px;
+    padding-top: 140px;
+    padding-left: 10px;
+  }
+  
+.parking-spot {
+    background-color: #1ea914;
+    border: 3px solid #000000;
+}
+
+.parking-spot:hover {
+    background-color: #2ecb15;
+}
+
+.parking-spot:active {
+    background-color: #79ce6b;
+    transform: scale(105%);
+}
+
+.sidenav {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.logo {
+    width: 230px;
+    height: 230px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #818181;
+    display: block;
+}
+  
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.main {
+    margin-left: 230px;
+    padding: 0px 10px;
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
