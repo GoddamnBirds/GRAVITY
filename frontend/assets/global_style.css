@@ -1,32 +1,71 @@
 body {
-    background-color: #080808;
+    background-color: #111;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 90%;
-    
+}
+
+.levels {
+    display: grid;
+    grid-template-columns: repeat(3, 160px);
+    grid-auto-rows: 60px;
+    gap: 10px;
+    padding-top: 0px;
+    padding-left: 340px;
+    padding-bottom: 80px;
+  }
+
+.level {
+    background-color: #111;
+    color: #fcfcfcbd;
+    border: 2px solid #fcfcfcbd;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.level:active {
+    background-color: #0077ff;
 }
 
 .parking-grid {
     display: grid;
-    grid-template-columns: repeat(13, 80px);
-    grid-auto-rows: 50px;
+    grid-template-columns: repeat(8, 110px);
+    grid-auto-rows: 70px;
     gap: 10px;
-    padding-top: 140px;
-    padding-left: 10px;
+    padding-top: 0px;
+    padding-left: 130px;
   }
   
 .parking-spot {
-    background-color: #1ea914;
-    border: 3px solid #000000;
+    background-color: #bcbcbc;
+    border: 3px solid #000000dd;
+    border-radius: 15px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }
 
 .parking-spot:hover {
-    background-color: #2ecb15;
+    background-color: #0077ff;
+    transition: 0.3s ease-in;
 }
 
-.parking-spot:active {
-    background-color: #79ce6b;
-    transform: scale(105%);
-}
+.parking-spot-taken {
+    background-image: url("car.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #323232;
+    border: 3px solid #000000dd;
+    border-radius: 15px;
+    background-size: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}   
 
 .sidenav {
     height: 100%;
@@ -35,7 +74,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #141414;
     overflow-x: hidden;
     padding-top: 10px;
 }

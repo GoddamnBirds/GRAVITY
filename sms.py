@@ -1,8 +1,8 @@
 from twilio.rest import Client
+from config import account_sid, auth_token
+
 
 def send_sms(to_number, parking_spot, floor):
-    account_sid = 'AC3dcd7b708b5b975a7d465eed56399e13'
-    auth_token = '896214f3639ad3f5ec322973168791f4'
 
     spot = parking_spot.split(",")
     
