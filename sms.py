@@ -12,7 +12,7 @@ def send_sms(to_number, parking_spot, floor):
     message = client.messages.create(
         body=message,
         from_=from_number,
-        to="+91" + to_number
+        to="+91 " + to_number
     )
 
     print("Message sent successfully!")

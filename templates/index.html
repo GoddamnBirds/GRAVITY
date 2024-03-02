@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/global_style.css">
+    <title>Park Smart</title>
+</head>
+<body>
+    <div class="sidenav">
+        <hr>
+        <form action="/handle_click" method="post">
+            <label style="color: #818181">liscence plate</label>
+            <br>
+            <input type="text", name="license" required>
+            <br>
+            <label style="color: #818181">phone number</label>
+            <input type="text", name="phone" required>
+            <button type="submit" name="button_add" value="true">Add</button>
+            <button type="submit" name="button_remove" value="true">Remove</button>
+            <button type="submit" name="button_check" value="true">Check duration</button>
+        </form>
+        <hr>
+    </div>
+        
+    <div class="main">
+        <div class="levels">
+            <div class="level">Level 1</div>
+            <div class="level">Level 2</div>
+            <div class="level">Level 3</div>
+        </div>
+        <div class="parking-grid">
+            <!-- Row 1 -->
+            <div class="parking-spot-taken"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            
+
+            <!-- Row 2 -->
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            
+
+            <!-- Row 3 -->
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            
+            <!-- Add more rows as needed -->
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="parking-grid">
+            <!-- Row 1 -->
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            
+
+            <!-- Row 2 -->
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            
+
+            <!-- Row 3 -->
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            <div class="parking-spot"></div>
+            
+            <!-- Add more rows as needed -->
+          </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>

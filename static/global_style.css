@@ -1,0 +1,111 @@
+body {
+    background-color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 90%;
+}
+
+.levels {
+    display: grid;
+    grid-template-columns: repeat(3, 160px);
+    grid-auto-rows: 60px;
+    gap: 10px;
+    padding-top: 0px;
+    padding-left: 340px;
+    padding-bottom: 80px;
+  }
+
+.level {
+    background-color: #111;
+    color: #fcfcfcbd;
+    border: 2px solid #fcfcfcbd;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.level:active {
+    background-color: #0077ff;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 110px);
+    grid-auto-rows: 70px;
+    gap: 10px;
+    padding-top: 0px;
+    padding-left: 130px;
+  }
+  
+.parking-spot {
+    background-color: #bcbcbc;
+    border: 3px solid #000000dd;
+    border-radius: 15px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.parking-spot:hover {
+    background-color: #0077ff;
+    transition: 0.3s ease-in;
+}
+
+.parking-spot-taken {
+    background-image: url("car_icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #323232;
+    border: 3px solid #000000dd;
+    border-radius: 15px;
+    background-size: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}   
+
+.sidenav {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #141414;
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.logo {
+    width: 230px;
+    height: 230px;
+}
+
+.sidenav button {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #141414;
+    border: none;
+    color: #818181;
+    display: block;
+}
+  
+
+  .sidenav button:hover {
+    color: #f1f1f1;
+}
+  
+.main {
+    margin-left: 230px;
+    padding: 0px 10px;
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

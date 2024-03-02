@@ -18,7 +18,6 @@ collection.append(db["floor3"])
 def setup():
     if "Building" in dbnames:
         return
-    print("1")
 
     for i in range(0,3):
         for j in range(1,5):
@@ -42,18 +41,47 @@ def addVehicle(license, phoneNo):
     date_time = datetime.datetime.now()
     unix_time = time.mktime(date_time.timetuple())
     collection[i].update_one({"_id":free} , {"$set": {"isOccupied":True, "plateNo":license, "driverNo":phoneNo, "unixTimeIn":unix_time, "dateTimeIn":date_time}})
-    send_sms(phoneNo, free, floor)
-    return 0
+    #send_sms(phoneNo, free, floor)
+    return free
 
 def removeVehicle(plateNo):
     for i in range(0,3):
         temp = collection[i].find_one({"plateNo":plateNo})
         if not(type(temp) is type(None)):
             free = temp["_id"]
-            floor = i + 1
             break
-    collection[i].update_one({"plateNo":plateNo}, {"$set": {"isOccupied":False, "plateNo":license, "driverNo":phoneNo, "unixTimeIn":unix_time, "dateTimeIn":date_time}})
+
+    unix_start_time = float(temp["unixTimeIn"]) 
+    unix_end_time = time.mktime(datetime.datetime.now().timetuple())
+    time_difference = unix_end_time - unix_start_time
+
+    hours = time_difference // 3600
+    minutes = (time_difference % 3600) // 60
+
+    rate = (hours * 60) + (minutes * 1)
+    print(f"user parked for {hours} hour(s) and {minutes} minute(s). Rate = {rate}")
+    
+    collection[i].update_one({"_id":free} , {"$set": {"isOccupied":False, "plateNo":"null", "driverNo":"null", "unixTimeIn":"null", "dateTimeIn":"null"}})
+    return [hours, minutes, rate]
+
+def getDuration(plateNo):
+    for i in range(0,3):
+        temp = collection[i].find_one({"plateNo":plateNo})
+        if not(type(temp) is type(None)):
+            break
+
+    unix_start_time = float(temp["unixTimeIn"]) 
+    unix_end_time = time.mktime(datetime.datetime.now().timetuple())
+    time_difference = unix_end_time - unix_start_time
+
+    hours = time_difference // 3600
+    minutes = (time_difference % 3600) // 60
+
+    rate = (hours * 60) + (minutes * 1)
+    print(f"user parked for {hours} hour(s) and {minutes} minute(s). Rate = {rate}")
 
 
 setup()
-addVehicle("ABCDEFG", "7738812438")
+addVehicle("TEST", "7738812438")
+#removeVehicle("TEST")
+#getDuration("TEST")
