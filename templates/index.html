@@ -7,10 +7,10 @@
     <title>Park Smart</title>
 </head>
 <body>
-    <div class="sidenav">
+    <div class="sidenav"> 
         <hr>
-        <form action="/handle_click" method="post">
-            <label style="color: #818181">liscence plate</label>
+        <form action="." method="post">
+            <label style="color: #818181">license plate</label>
             <br>
             <input type="text", name="license" required>
             <br>
@@ -31,36 +31,36 @@
         </div>
         <div class="parking-grid">
             <!-- Row 1 -->
-            <div class="parking-spot-taken"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
+            <div class="{{r11|default("parking-spot", false)}}"></div>
+            <div class="{{r12|default("parking-spot", true)}}"></div>
+            <div class="{{r13|default("parking-spot", true)}}"></div>
+            <div class="{{r14|default("parking-spot", true)}}"></div>
+            <div class="{{r15|default("parking-spot", true)}}"></div>
+            <div class="{{r16|default("parking-spot", true)}}"></div>
+            <div class="{{r17|default("parking-spot", true)}}"></div>
+            <div class="{{r18|default("parking-spot", true)}}"></div>
             
 
             <!-- Row 2 -->
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
+            <div class="{{r21|default("parking-spot", true)}}"></div>
+            <div class="{{r22|default("parking-spot", true)}}"></div>
+            <div class="{{r23|default("parking-spot", true)}}"></div>
+            <div class="{{r24|default("parking-spot", true)}}"></div>
+            <div class="{{r25|default("parking-spot", true)}}"></div>
+            <div class="{{r26|default("parking-spot", true)}}"></div>
+            <div class="{{r27|default("parking-spot", true)}}"></div>
+            <div class="{{r28|default("parking-spot", true)}}"></div>
             
 
             <!-- Row 3 -->
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
+            <div class="{{r31|default("parking-spot", true)}}"></div>
+            <div class="{{r32|default("parking-spot", true)}}"></div>
+            <div class="{{r33|default("parking-spot", true)}}"></div>
+            <div class="{{r34|default("parking-spot", true)}}"></div>
+            <div class="{{r35|default("parking-spot", true)}}"></div>
+            <div class="{{r36|default("parking-spot", true)}}"></div>
+            <div class="{{r37|default("parking-spot", true)}}"></div>
+            <div class="{{r38|default("parking-spot", true)}}"></div>
             
             <!-- Add more rows as needed -->
           </div>
@@ -69,36 +69,36 @@
           <br>
           <div class="parking-grid">
             <!-- Row 1 -->
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
+            <div class="{{r41|default("parking-spot", true)}}"></div>
+            <div class="{{r42|default("parking-spot", true)}}"></div>
+            <div class="{{r43|default("parking-spot", true)}}"></div>
+            <div class="{{r44|default("parking-spot", true)}}"></div>
+            <div class="{{r45|default("parking-spot", true)}}"></div>
+            <div class="{{r46|default("parking-spot", true)}}"></div>
+            <div class="{{r47|default("parking-spot", true)}}"></div>
+            <div class="{{r48|default("parking-spot", true)}}"></div>
             
 
             <!-- Row 2 -->
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
+            <div class="{{r51|default("parking-spot", true)}}"></div>
+            <div class="{{r52|default("parking-spot", true)}}"></div>
+            <div class="{{r53|default("parking-spot", true)}}"></div>
+            <div class="{{r54|default("parking-spot", true)}}"></div>
+            <div class="{{r55|default("parking-spot", true)}}"></div>
+            <div class="{{r56|default("parking-spot", true)}}"></div>
+            <div class="{{r57|default("parking-spot", true)}}"></div>
+            <div class="{{r58|default("parking-spot", true)}}"></div>
             
 
             <!-- Row 3 -->
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
-            <div class="parking-spot"></div>
+            <div class="{{r61|default("parking-spot", true)}}"></div>
+            <div class="{{r62|default("parking-spot", true)}}"></div>
+            <div class="{{r63|default("parking-spot", true)}}"></div>
+            <div class="{{r64|default("parking-spot", true)}}"></div>
+            <div class="{{r65|default("parking-spot", true)}}"></div>
+            <div class="{{r66|default("parking-spot", true)}}"></div>
+            <div class="{{r67|default("parking-spot", true)}}"></div>
+            <div class="{{r68|default("parking-spot", true)}}"></div>
             
             <!-- Add more rows as needed -->
           </div>

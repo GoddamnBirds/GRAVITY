@@ -41,7 +41,7 @@ body {
   }
   
 .parking-spot {
-    background-color: #bcbcbc;
+    background-color: #0dff00;
     border: 3px solid #000000dd;
     border-radius: 15px;
     display: flex;
@@ -55,10 +55,10 @@ body {
 }
 
 .parking-spot-taken {
-    background-image: url("car_icon.png");
+    background-image: url("car.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: #323232;
+    background-color: #ff0000;
     border: 3px solid #000000dd;
     border-radius: 15px;
     background-size: 100%;

@@ -5,9 +5,11 @@ import datetime
 import ast
 import time 
 from sms import send_sms
+from pymongo.server_api import ServerApi
+from config import url
 
+cluster = MongoClient(url, server_api=ServerApi('1'))
 
-cluster = MongoClient("mongodb://localhost:27017/")
 dbnames = cluster.list_database_names()
 db = cluster["Building"]
 collection = []
@@ -20,10 +22,8 @@ def setup():
         return
 
     for i in range(0,3):
-        for j in range(1,5):
-            for k in range(1,15):
-                date_time = datetime.datetime.now()
-                unix_time = time.mktime(date_time.timetuple())
+        for j in range(1,7):
+            for k in range(1,9):
                 text = '{"_id":"%s,%s", "isOccupied":False, "plateNo":"null", "driverNo":"null", "unixTimeIn":"null", "dateTimeIn":"null"}' % (j, k)
                 res = ast.literal_eval(text)
                 collection[i].insert_one(res)
@@ -38,10 +38,13 @@ def addVehicle(license, phoneNo):
             break
     else:
         return -1
+    
     date_time = datetime.datetime.now()
     unix_time = time.mktime(date_time.timetuple())
     collection[i].update_one({"_id":free} , {"$set": {"isOccupied":True, "plateNo":license, "driverNo":phoneNo, "unixTimeIn":unix_time, "dateTimeIn":date_time}})
+    
     #send_sms(phoneNo, free, floor)
+    
     return free
 
 def removeVehicle(plateNo):
@@ -62,13 +65,15 @@ def removeVehicle(plateNo):
     print(f"user parked for {hours} hour(s) and {minutes} minute(s). Rate = {rate}")
     
     collection[i].update_one({"_id":free} , {"$set": {"isOccupied":False, "plateNo":"null", "driverNo":"null", "unixTimeIn":"null", "dateTimeIn":"null"}})
-    return [hours, minutes, rate]
+    return [free, hours, minutes, rate]
 
 def getDuration(plateNo):
     for i in range(0,3):
         temp = collection[i].find_one({"plateNo":plateNo})
         if not(type(temp) is type(None)):
             break
+    else:
+        return -1
 
     unix_start_time = float(temp["unixTimeIn"]) 
     unix_end_time = time.mktime(datetime.datetime.now().timetuple())
@@ -82,6 +87,6 @@ def getDuration(plateNo):
 
 
 setup()
-addVehicle("TEST", "7738812438")
+addVehicle("TEST", "9030282085")
 #removeVehicle("TEST")
 #getDuration("TEST")
