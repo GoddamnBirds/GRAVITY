@@ -43,7 +43,7 @@ def addVehicle(license, phoneNo):
     unix_time = time.mktime(date_time.timetuple())
     collection[i].update_one({"_id":free} , {"$set": {"isOccupied":True, "plateNo":license, "driverNo":phoneNo, "unixTimeIn":unix_time, "dateTimeIn":date_time}})
     
-    #send_sms(phoneNo, free, floor)
+    send_sms(phoneNo, free, floor)
     
     return free
 
@@ -86,7 +86,7 @@ def getDuration(plateNo):
     print(f"user parked for {hours} hour(s) and {minutes} minute(s). Rate = {rate}")
 
 
-setup()
-addVehicle("TEST", "9030282085")
+#setup()
+addVehicle("TEST", "7337824488")
 #removeVehicle("TEST")
 #getDuration("TEST")
