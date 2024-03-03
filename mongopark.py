@@ -87,6 +87,6 @@ def getDuration(plateNo):
 
 
 #setup()
-addVehicle("TEST", "7337824488")
+#addVehicle("TEST", "7337824488")
 #removeVehicle("TEST")
 #getDuration("TEST")
